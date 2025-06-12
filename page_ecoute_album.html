@@ -40,19 +40,24 @@
       position: sticky;
       top: 0;
       z-index: 100;
+      justify-content: space-between; /* place les logos aux extrémités */
+      padding: 0 20px; /* un peu d'espace sur les côtés */
     }
 
     header img {
       height: 50px;
       width: auto;
+      object-fit: contain;
     }
 
     header h1 {
       color: var(--blanc);
       font-weight: 700;
-      font-size: 1.9rem;
       margin: 0;
       user-select: none;
+      flex-grow: 1;
+      text-align: center;
+      font-size: 1.5rem;
     }
 
     /* Main */
