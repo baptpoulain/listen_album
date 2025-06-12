@@ -112,80 +112,81 @@
       background-color: #fafafa;
     }
 
-    /* Footer */
     footer {
-       display: flex;
-      justify-content: space-between;
-      align-items: center; /* centre verticalement */
-      padding: 20px 30px;
+      position: relative;
       background-color: #111;
       color: white;
-      gap: 20px;
-      flex-wrap: wrap; /* pour mobile */
+      padding: 20px 30px;
+      min-height: 150px; /* hauteur minimum pour que l'absolu soit visible */
       box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.25);
     }
-
-    .eurotoire-logo img {
-      height: 80px;
-      object-fit: contain;
-    }
-
+    
+    /* Footer right group placé en bas à droite */
     .footer-right {
+      position: absolute;
+      right: 30px;
+      bottom: 20px;
       display: flex;
-      align-items: center; /* centre verticalement logo et infos */
+      align-items: center;
       gap: 20px;
-      flex: 1 1 auto;
-      min-width: 0;
+      max-width: 600px;
+      background: transparent;
     }
-
-    .ledr-logo img {
+    
+    /* Logo à l’intérieur */
+    .footer-logo-img img,
+    .footer-logo img {
       height: 80px;
       object-fit: contain;
     }
-
+    
+    /* Bloc infos en colonne */
     .footer-info {
       display: flex;
       flex-direction: column;
       gap: 10px;
       font-size: 0.9rem;
       line-height: 1.3;
-      max-width: 400px; /* limite largeur texte */
+      max-width: 400px;
     }
-
+    
+    /* Liens sociaux */
     .footer-social a {
       color: #ccc;
       text-decoration: none;
       margin: 0 5px;
     }
-
-   .footer-social a:hover {
+    
+    .footer-social a:hover {
       color: white;
     }
-
+    
+    /* Footer nav */
     .footer-nav a {
       color: #ccc;
       text-decoration: none;
       margin: 0 5px;
     }
-
+    
     .footer-nav a:hover {
       color: white;
     }
-
-    /* Responsive simple */
+    
+    /* Pour éviter que le logo gauche (eurotoire) gêne la position absolue */
+    .eurotoire-logo {
+      position: relative;
+      z-index: 1;
+    }
+    
     @media (max-width: 700px) {
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-      }
       .footer-right {
+        position: static;
         flex-direction: column;
         align-items: flex-start;
-      }
-      .ledr-logo {
-        margin-bottom: 20px;
+        margin-top: 20px;
       }
     }
+
   </style>
 </head>
 <body>
