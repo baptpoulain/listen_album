@@ -127,7 +127,13 @@
   }
   /* Logo eurotoire à gauche */
   .footer-left img {
-    max-width: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* <-- centrer horizontalement tout le contenu */
+    justify-content: center;
+    gap: 15px;
+    max-width: 400px;
+    flex: 1 1 auto;
     height: auto;
     filter: brightness(1.2);
   }
