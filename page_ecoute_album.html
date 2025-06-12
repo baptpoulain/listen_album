@@ -112,84 +112,119 @@
       background-color: #fafafa;
     }
 
-    /* Footer */
+     footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* centre verticalement les deux blocs */
+    background-color: #111;
+    color: #eee;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    gap: 40px;
+    flex-wrap: wrap;
+    text-align: left; /* texte aligné à gauche */
+  }
+  
+  /* Logo eurotoire à gauche */
+  .footer-left img {
+    max-width: 180px;
+    height: auto;
+    filter: brightness(1.2);
+  }
+  
+  /* Conteneur droit (logo + infos) */
+  .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center; /* centre verticalement contenu dans footer */
+    gap: 15px;
+    max-width: 400px;
+    flex: 1 1 auto;
+  }
+  
+  /* Logo droit */
+  .footer-logo-right {
+    max-width: 180px;
+    height: auto;
+    filter: brightness(1.2);
+    align-self: center; /* centre horizontalement dans .footer-right */
+    margin-bottom: 10px;
+  }
+
+  /* Adresse */
+  footer address {
+    font-style: normal;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #ccc;
+  }
+  
+  /* Réseaux sociaux */
+  .footer-social {
+    margin-bottom: 10px;
+  }
+  
+  .footer-social a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 12px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    font-size: 16px;
+  }
+  
+  .footer-social a:hover {
+    color: var(--orange-accent);
+  }
+  
+  /* Texte copyright */
+  footer p {
+    margin: 10px 0 0;
+    font-size: 13px;
+    color: #aaa;
+  }
+  
+  /* Navigation footer */
+  .footer-nav {
+    margin-top: 10px;
+  }
+  
+  .footer-nav a {
+    color: #eee;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: var(--orange-accent);
+  }
+  
+  /* Responsive */
+  @media (max-width: 720px) {
     footer {
-      background-color: #111;
-      color: #eee;
-      padding: 40px 20px;
-      font-family: Arial, sans-serif;
-      font-size: 14px;
+      flex-direction: column;
+      align-items: center;
       text-align: center;
-      margin-top: 60px;
     }
+  
+    .footer-left, .footer-right {
+      max-width: 100%;
+      align-items: center;
+    }
+  
+    .footer-right {
+      gap: 20px;
+    }
+  
+    .footer-logo-right {
+      margin-bottom: 15px;
+    }
+  }
 
-    footer .footer-logo img {
-      max-width: 180px;
-      height: auto;
-      margin-bottom: 25px;
-      filter: brightness(1.2);
-    }
-
-    footer address {
-      font-style: normal;
-      line-height: 1.6;
-      margin-bottom: 25px;
-      color: #ccc;
-    }
-
-    footer .footer-social {
-      margin-bottom: 20px;
-    }
-
-    footer .footer-social a {
-      color: #eee;
-      text-decoration: none;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-      font-size: 16px;
-    }
-
-    footer .footer-social a:hover {
-      color: var(--orange-accent);
-    }
-
-    footer p {
-      margin: 20px 0 15px;
-      font-size: 13px;
-      color: #aaa;
-    }
-
-    footer .footer-nav {
-      margin-top: 15px;
-    }
-
-    footer .footer-nav a {
-      color: #eee;
-      text-decoration: none;
-      margin: 0 10px;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    footer .footer-nav a:hover {
-      color: var(--orange-accent);
-    }
-
-    /* Responsive */
-    @media (max-width: 720px) {
-      main {
-        margin: 20px 15px;
-        padding: 20px 25px;
-      }
-      header h1 {
-        font-size: 1.4rem;
-      }
-      button {
-        font-size: 1rem;
-        padding: 12px 16px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -229,31 +264,34 @@
 </script>
 
 <footer>
-  <div class="footer-logo">
-    <img src="logo_eurotoire.png" alt="Logo Mediatone" />
-  </div>
-  <div class="footer-logo">
-    <img src="logo_les_enfants_du_rhone.jpg" alt="Logo Mediatone" />
-  </div>
-  <address>
-    28 rue Denfert Rochereau<br />
-    69003 LYON<br />
-    Tel : 06 67 09 14 61<br />
-    Mail : programmation.ledr@gmail.com
-  </address>
-
-  <div class="footer-social">
-    <a href="https://www.instagram.com/lesenfantsdurhone/" target="_blank" rel="noopener">Instagram</a> |
-    <a href="https://www.facebook.com/LEDR.fr/" target="_blank" rel="noopener">Facebook</a> |
-    <a href="https://www.linkedin.com/company/les-enfants-du-rh%C3%B4ne/" target="_blank" rel="noopener">Linkedin</a>
+  <div class="footer-left">
+    <img src="logo_eurotoire.png" alt="Logo Eurotoire" />
   </div>
 
-  <p>© 2025 Les Enfants Du Rhône - Tous droits réservés</p>
+  <div class="footer-right">
+    <img src="logo_les_enfants_du_rhone.jpg" alt="Logo Les Enfants Du Rhône" class="footer-logo-right" />
+    
+    <address>
+      28 rue Denfert Rochereau<br />
+      69003 LYON<br />
+      Tel : 06 67 09 14 61<br />
+      Mail : programmation.ledr@gmail.com
+    </address>
 
-  <nav class="footer-nav">
-    <a href="">Contact</a> |
-    <a href="https://radio.garden/listen/les-enfants-du-rhone/_ZH11wRa">Ecoutez nous</a> 
-  </nav>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/lesenfantsdurhone/" target="_blank" rel="noopener">Instagram</a> |
+      <a href="https://www.facebook.com/LEDR.fr/" target="_blank" rel="noopener">Facebook</a> |
+      <a href="https://www.linkedin.com/company/les-enfants-du-rh%C3%B4ne/" target="_blank" rel="noopener">Linkedin</a>
+    </div>
+
+    <p>© 2025 Les Enfants Du Rhône - Tous droits réservés</p>
+
+    <nav class="footer-nav">
+      <a href="">Contact</a> |
+      <a href="https://radio.garden/listen/les-enfants-du-rhone/_ZH11wRa">Ecoutez nous</a> 
+    </nav>
+  </div>
 </footer>
+
 
 </html>
